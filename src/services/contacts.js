@@ -15,9 +15,9 @@ export const postContact = async (payload) => {
   return contact;
 };
 
-export const patchContact = async (studentId, payload, options = {}) => {
-  const result = await StudentsCollection.findOneAndUpdate(
-    { _id: studentId },
+export const patchContact = async (contactId, payload, options = {}) => {
+  const result = await ContactsCollection.findOneAndUpdate(
+    { _id: contactId },
     payload,
     {
       new: true,
@@ -28,7 +28,13 @@ export const patchContact = async (studentId, payload, options = {}) => {
   if (!result || !result.value) return null;
 
   return {
-    student: result.value,
+    contact: result.value,
     isNew: Boolean(result?.lastErrorObject?.upserted),
   };
+};
+
+export const deleteContact = async (contactId) => {
+  const contact = await ContactsCollection.findOneAndDelete({ _id: contactId });
+
+  return contact;
 };
