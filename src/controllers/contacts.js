@@ -68,7 +68,5 @@ export const deleteContactController = async (req, res) => {
     return;
   }
 
-  res.json({
-    status: 204,
-  });
+  res.status(204).json();
 };
