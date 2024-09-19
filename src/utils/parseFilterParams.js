@@ -7,10 +7,14 @@ const parseContactType = (type) => {
 };
 
 const parseIsFavourite = (isFavourite) => {
-  const isBoolean = typeof isFavourite === 'boolean';
-  if (!isBoolean) return;
-
-  return isFavourite;
+  if (typeof isFavourite !== 'string') return;
+  if (isFavourite === 'true') {
+    return true;
+  }
+  if (isFavourite === 'false') {
+    return false;
+  }
+  return;
 };
 
 export const parseFilterParams = (query) => {
