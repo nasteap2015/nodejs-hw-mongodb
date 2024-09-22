@@ -9,6 +9,5 @@ export const isValidId = (req, res, next) => {
       'Contact ID is not correct, please check and try again',
     );
   }
-
   next();
 };
