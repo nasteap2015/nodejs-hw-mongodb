@@ -25,6 +25,10 @@ const contactsSchema = new Schema(
       required: true,
       default: 'personal',
     },
+    userId: {
+      type: string,
+      required: true,
+    },
   },
   {
     timestamps: true,
