@@ -29,6 +29,7 @@ export const createContactSchema = Joi.object({
         'Contact type should contain "work", "home" or "personal"',
       'any.required': 'Username is required',
     }),
+  photo: Joi.string(),
 });
 
 export const updateContactSchema = Joi.object({
@@ -54,4 +55,5 @@ export const updateContactSchema = Joi.object({
     'string.valid': 'Contact type should contain "work", "home" or "personal"',
     'any.required': 'Username is required',
   }),
+  photo: Joi.string(),
 });
